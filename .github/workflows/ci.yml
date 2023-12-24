@@ -2,7 +2,7 @@ name: Test CI
 on:
   pull_request:
 jobs:
-  test:
+  ci:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
@@ -21,8 +21,3 @@ jobs:
         run: bundle exec jekyll build --strict_front_matter --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
-  ci:
-    runs-on: ubuntu-20.04
-    needs: test
-    steps:
-      - run: exit 0
