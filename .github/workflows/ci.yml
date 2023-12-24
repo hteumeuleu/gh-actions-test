@@ -1,0 +1,13 @@
+name: Test CI
+on:
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    steps:
+      - run: exit 1
+  ci:
+    runs-on: ubuntu-20.04
+    needs: test
+    steps:
+      - run: exit 0
